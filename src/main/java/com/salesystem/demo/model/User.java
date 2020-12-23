@@ -3,6 +3,10 @@ package com.salesystem.demo.model;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.List;
 
@@ -13,13 +17,29 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull(message = "This field is required.")
     private String name;
+
+    @NotNull(message = "This field is required.")
     private String surname;
+
+    @NotNull(message = "This field is required.")
     private String username;
+
+    @NotNull(message = "This field is required.")
+    @Size(min =5,message = "Password must be at least 5 characters.")
     private String password;
+
+    @NotNull(message = "This field is required.")
     private String address;
+
     private String photoUrl;
+
+    @NotNull(message = "This field is required.")
     private String phoneNo;
+
+    @NotNull(message = "This field is required.")
+    @Email(message = "Please enter a valid email address.")
     private String mail;
 
     @DateTimeFormat(pattern="dd.MM.yyyy hh:mm")

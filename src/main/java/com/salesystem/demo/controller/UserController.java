@@ -14,7 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.transaction.Transactional;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
@@ -70,33 +69,30 @@ public class UserController {
     }
 
     @RequestMapping("/sellProduct")
-    public String sellProduct(Principal principal, HttpSession session, HttpServletRequest request) {
+    public String sellProduct(Principal principal, HttpSession session) {
 
         float totalPrice = 0;
         Bill bill = new Bill();
-        // yeni bir fatura oluşturuldu.
 
         User user = userService.getByUsername(principal.getName());
-        //giriş yapmış kullanıcı getirildi.
 
         List<Product> products = (List<Product>)  session.getAttribute("Basket");
 
         bill.setUser(user);
         bill.setProducts(products);
-        // faturaya kullanıcısı ve ürünü verildi.
+        // set bill user and products.
 
         for (Product product : products){
             totalPrice +=product.getPrice();
             productService.delete(product.getId());
         }
-        // sepetteki ürünleri tektek dolaşıp siliyoruz
+        //  delete all items in the basket
 
         bill.setTotalPrice(totalPrice);
-        // faturaya fiyati verildi.
 
         billService.saveBill(bill);
 
-        destroySession(request);
+        session.removeAttribute("Basket");
 
         return "redirect:/";
     }
@@ -143,9 +139,22 @@ public class UserController {
 
 
     @RequestMapping("/destroy")
-    public String destroySession(HttpServletRequest request) {
+    public String deleteSession(HttpSession session) {
 
-        List<Product> products = new ArrayList<>();
+        session.removeAttribute("Basket");
+
+        return "redirect:/user/myBasket";
+    }
+
+    @RequestMapping("/deleteItem/{id}")
+    public String deleteCartCart(@PathVariable Long id, HttpSession session,HttpServletRequest request){
+        @SuppressWarnings("unchecked")
+        List<Product> products = (List<Product>)  session.getAttribute("Basket");
+
+        Product deletedProduct = products.stream().filter((product) -> product.getId() == id).findAny().get();
+
+        products.remove(deletedProduct);
+
         request.getSession().setAttribute("Basket", products);
 
         return "redirect:/user/myBasket";

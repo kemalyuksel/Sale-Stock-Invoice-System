@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="/resources/css/dashbord.css">
-    <title>Document</title>
+    <title>Invoices</title>
 </head>
 <body>
 
@@ -29,7 +29,7 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="lead">Faturalar</h1>
+                <h1 class="lead">Invoices</h1>
             </div>
 
             <div class="row">
@@ -38,11 +38,11 @@
                     <table class="table ">
                         <thead class="thead-dark">
                         <tr>
-                            <th>Müşteri</th>
-                            <th>Müşteri Ad Soyad</th>
-                            <th>Fatura No</th>
-                            <th>Toplam Fiyat</th>
-                            <th>İşlem</th>
+                            <th>Customer</th>
+                            <th>Customer FullName</th>
+                            <th>Invoice Number</th>
+                            <th>Total Price</th>
+                            <th>Options</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -52,8 +52,8 @@
                                 <td><img src="/resources/img/customers/${bill.user.photoUrl}" width="50" height="50" alt=""></td>
                                 <td>${bill.user.name} ${bill.user.surname}</td>
                                 <td> #${bill.billNo}</td>
-                                <td> ${bill.totalPrice} TL</td>
-                                <td><a href="/user/invoice/${bill.id}">Faturayı Gör</a></td>
+                                <td> ${bill.totalPrice}  &#8378;</td>
+                                <td><a href="/user/invoice/${bill.id}">Browse Invoice</a></td>
                             </tr>
                         </c:forEach>
 

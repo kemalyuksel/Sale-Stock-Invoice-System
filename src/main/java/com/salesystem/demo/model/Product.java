@@ -1,6 +1,11 @@
 package com.salesystem.demo.model;
 
+import org.springframework.format.annotation.NumberFormat;
+
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -10,13 +15,32 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotEmpty(message = "This field is required.")
+    @NotNull
     private String name;
+
+    @NotEmpty(message = "This field is required.")
+    @NotNull
     private String code;
+
+    @NotEmpty(message = "This field is required.")
+    @NotNull
     private String brand;
+
+    @NotNull
+    @Min(value = 1,message = "Price must be greater than or equal to 1.")
     private Float price;
+
+    @NotEmpty(message = "This field is required.")
+    @NotNull
     private String description;
+
+    @NotEmpty(message = "This field is required.")
+    @NotNull
     private String photoUrl;
+
     private int quantity = 0;
+
 
     @ManyToMany(mappedBy = "products")
     private List<Bill> bills;

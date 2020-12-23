@@ -12,11 +12,11 @@ import java.util.List;
 import java.util.Set;
 
 
-public class MyUserDetails implements UserDetails {
+public class MyUserPrincipal implements UserDetails {
 
     private User user;
 
-    public MyUserDetails(User user) {
+    public MyUserPrincipal(User user) {
         this.user = user;
     }
 

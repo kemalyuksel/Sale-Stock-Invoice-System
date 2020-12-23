@@ -10,27 +10,33 @@
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/">
+                    <a class="nav-link" href="/admin/adminHome">
                         <span data-feather="home"></span>
-                        Anasayfa <span class="sr-only">(current)</span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        <span data-feather="shopping-bag"></span>
+                        Store
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/product/products">
                         <span data-feather="layers"></span>
-                        Stoklar
+                        Stocks
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/user/customers">
                         <span data-feather="users"></span>
-                        Müşteriler
+                        Customers
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/bill/bills">
                         <span data-feather="bar-chart-2"></span>
-                        Faturalar
+                        Bills
                     </a>
                 </li>
 
@@ -47,21 +53,21 @@
     <div class="sidebar-sticky">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link active" href="/">
+                <a class="nav-link" href="/">
                     <span data-feather="home"></span>
-                    Anasayfa <span class="sr-only">(current)</span>
+                    Home
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/orderList/">
-                    <span data-feather="shopping-cart"></span>
-                    Siparişlerim
+                    <span data-feather="shopping-bag"></span>
+                    Orders
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/user/myBasket/">
                     <span data-feather="shopping-cart"></span>
-                    Sepetim
+                    Cart
                 </a>
             </li>
 

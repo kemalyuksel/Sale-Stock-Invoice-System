@@ -19,6 +19,7 @@ public class Role {
     public Role() {
     }
 
+
     public List<User> getUser() {
         return user;
     }

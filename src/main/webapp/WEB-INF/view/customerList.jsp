@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="/resources/css/dashbord.css">
-    <title>Document</title>
+    <title>Customers</title>
 </head>
 <body>
 
@@ -29,7 +29,7 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="lead">Müşteriler</h1>
+                <h1 class="lead">Customers</h1>
             </div>
 
             <div class="row">
@@ -38,13 +38,13 @@
                     <table class="table ">
                         <thead class="thead-dark">
                         <tr>
-                            <th>Müşteri</th>
-                            <th>Müşteri Ad Soyad</th>
-                            <th>Müşteri Kullanıcı Ad</th>
-                            <th>Müşteri No</th>
-                            <th>Müşteri Adres</th>
-                            <th>Müşteri Rol</th>
-                            <th>Müşteri Siparişler</th>
+                            <th>Customer</th>
+                            <th>Customer FullName</th>
+                            <th>Customer Username</th>
+                            <th>Customer No</th>
+                            <th>Customer Address</th>
+                            <th>Customer Role</th>
+                            <th>Customer Orders</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -57,7 +57,7 @@
                                 <td>${customer.phoneNo}</td>
                                 <td>${customer.address}</td>
                                 <td>${customer.role.name}</td>
-                                <td><a href="/user/customerBills/${customer.id}" class="btn btn-info btn-sm">GÖZAT</a></td>
+                                <td><a href="/user/customerBills/${customer.id}" class="btn btn-info btn-sm">Browse</a></td>
                                 <td></td>
                             </tr>
                         </c:forEach>

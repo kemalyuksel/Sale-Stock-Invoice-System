@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="/resources/css/dashbord.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Document</title>
+    <title>My Orders</title>
 </head>
 <body>
 
@@ -29,7 +29,7 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="lead">Siparişlerim</h1>
+                <h1 class="lead">My Orders</h1>
             </div>
 
             <div class="row">
@@ -38,12 +38,12 @@
                     <table class="table ">
                         <thead class="thead-dark">
                         <tr>
-                            <th>Fotoğraf</th>
-                            <th>Ad Soyad</th>
-                            <th>Fatura No</th>
-                            <th>Ürünler</th>
-                            <th>Toplam Fiyat</th>
-                            <th>İşlem</th>
+                            <th>Photo</th>
+                            <th>FullName</th>
+                            <th>Invoice Number</th>
+                            <th>Products</th>
+                            <th>Total Price</th>
+                            <th>Options</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -58,8 +58,8 @@
                                         ${product.brand}  ${product.name} |
                                     </c:forEach>
                                 </td>
-                                <td> ${order.totalPrice} TL</td>
-                                <td><a href="/user/invoice/${order.id}">Faturayı Gör</a></td>
+                                <td> ${order.totalPrice} &#8378;</td>
+                                <td><a href="/user/invoice/${order.id}">Browse Invoice</a></td>
 
                             </tr>
                         </c:forEach>

@@ -49,14 +49,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/resources/**", "/css/**", "/img/**", "/js/**", "/vendors/**","/").permitAll()
+                .antMatchers("/resources/**", "/css/**", "/img/**", "/js/**", "/vendors/**","/auth/**").permitAll()
                 .antMatchers("/").hasAnyAuthority("USER", "ADMIN")
-                .antMatchers("/product/**","/bill/**").hasAnyAuthority("ADMIN")
+                .antMatchers("/product/**","/bill/**","/admin/**").hasAnyAuthority("ADMIN")
                 .anyRequest().authenticated()
                 .and()
-                .formLogin().permitAll()
+                .formLogin().loginPage("/auth/login")
+                .loginProcessingUrl("/loginUser").permitAll()
                 .and()
-                .logout().permitAll()
+                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .and()
                 .exceptionHandling().accessDeniedPage("/403");
     }
