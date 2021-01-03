@@ -9,6 +9,9 @@
     <nav class="col-md-2 d-none d-md-block bg-light sidebar">
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
+
+                <h5 class="text-center"><i class="fas fa-user"></i> <sec:authentication property="principal.username"/></h5>
+
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/adminHome">
                         <span data-feather="home"></span>
@@ -52,6 +55,9 @@
 <nav class="col-md-2 d-none d-md-block bg-light sidebar">
     <div class="sidebar-sticky">
         <ul class="nav flex-column">
+
+            <h5 class="text-center"><i class="fas fa-user"></i> <sec:authentication property="principal.username"/></h5>
+
             <li class="nav-item">
                 <a class="nav-link" href="/">
                     <span data-feather="home"></span>

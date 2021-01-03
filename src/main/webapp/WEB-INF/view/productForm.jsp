@@ -2,16 +2,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Add Product</title>
-    <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-</head>
-<body>
+
+
+
+<jsp:include page="partial/topbar.jsp">
+    <jsp:param name="title"  value="Add Product" />
+</jsp:include>
+
+
+<jsp:include page="partial/headClose.jsp">
+    <jsp:param name="title" value="myCart" />
+</jsp:include>
 
 <style>
 
@@ -24,9 +25,6 @@
            modelAttribute="product" method="post" >
 
     <h5>Add Product</h5>
-    <div class="alert alert-danger" role="alert">
-        If the item code is available (existing product), it just increases the item quantity.
-    </div>
     <a class="float-right" href="/product/products">Return to Products</a>
 
 
@@ -73,5 +71,4 @@
 <jsp:include page="partial/footer.jsp">
     <jsp:param name="title" value="Main title" />
 </jsp:include>
-</body>
-</html>
+

@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="/resources/css/dashbord.css">
     <link rel="stylesheet" href="/resources/css/store.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" type="text/css" />
     <title>Store</title>
 </head>
 <body>
@@ -19,7 +21,7 @@
 
     <form>
         <input class="form-control form-control-dark w-100"
-               type="text" name="q" id="keyword" size="500" value="${q}" required placeholder="Search">
+               type="text" name="q" id="keyword" size="500" value="${q}" placeholder="Search">
     </form>
 
     <ul class="navbar-nav px-3">
@@ -41,14 +43,21 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="lead">Store</h1>
+                <h1 class="lead">Store
+
+                    <c:if test="${!empty products}">
+                        <c:if test="${q.trim().length() > 0}">
+                        <br><br><b>search results for :</b> ' ${q} '
+                         </c:if>
+                    </c:if>
+                </h1>
             </div>
+
 
             <div class="row">
 
 
                 <c:forEach items="${products}" var="product">
-
 
                     <div class="col-md-3">
                         <figure class="card card-product">
@@ -64,25 +73,28 @@
                                     </a>
                                     <div class="price-wrap h5">
                                         <span class="price-new">${product.price} &#x20BA;</span>
-                                    </div> <!-- price-wrap.// -->
-                                </div> <!-- action-wrap -->
+                                    </div>
+                                </div>
                             </figcaption>
-                        </figure> <!-- card // -->
-                    </div> <!-- col // -->
-
+                        </figure>
+                    </div>
                 </c:forEach>
+
+                <c:if test="${empty products}">
+                       <div class="container">
+                           <h2 class="text-center">
+                               <i class="fas fa-exclamation-triangle text-warning"></i>
+                               No results for " ${q} "
+                               <i class="fas fa-exclamation-triangle text-warning"></i>
+                           </h2 >
+                       </div>
+                </c:if>
 
 
                 </div>
-            </div>
         </main>
     </div>
 </div>
-
-
-
-
-
 
 
 
@@ -90,5 +102,3 @@
     <jsp:param name="title" value="Main title" />
 </jsp:include>
 
-</body>
-</html>

@@ -58,7 +58,7 @@ public class MapService {
 
         List<Product> products = productRepository.findAll();
 
-        products = products.stream().filter(product -> product.getQuantity() < 10).limit(8).collect(Collectors.toList());
+        products = products.stream().filter(product -> product.getQuantity() < 20).limit(8).collect(Collectors.toList());
 
         return products;
     }

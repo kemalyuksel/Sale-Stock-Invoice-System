@@ -31,12 +31,6 @@ public class AuthenticationController {
 
     @RequestMapping(value = { "/login" })
     public String login() {
-//
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("login");
-//
-//        modelAndView.addObject("user", new loginDto());
-
         return "login";
     }
 

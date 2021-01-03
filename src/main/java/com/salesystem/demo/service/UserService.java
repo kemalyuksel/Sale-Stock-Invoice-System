@@ -9,6 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UserService {
@@ -22,6 +23,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+
     public void save(User user){
         user.setPassword(encoder.encode(user.getPassword()));
 
@@ -34,7 +36,8 @@ public class UserService {
     }
 
     public List<User> listAllUser(){
-        return userRepository.findAll();
+        Role role =  roleRepository.findByName("USER");
+        return userRepository.findAll().stream().filter(user -> user.getRole().equals(role) ).collect(Collectors.toList());
     }
 
     public User getById(Long id){

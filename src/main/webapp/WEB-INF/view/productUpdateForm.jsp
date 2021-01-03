@@ -1,20 +1,19 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Update Product</title>
-    <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-</head>
-<body>
+
+<jsp:include page="partial/topbar.jsp">
+    <jsp:param name="title"  value="Update Product" />
+</jsp:include>
+
+
+<jsp:include page="partial/headClose.jsp">
+    <jsp:param name="title" value="myCart" />
+</jsp:include>
 
 
 
-<form:form class="form mx-auto w-50 mb-5 mt-5" role="form" autocomplete="off" action="/product/updateProductPost/${updatedProduct.id}"
+<form:form class="form mx-auto w-50 mb-5 mt-5 p-5" role="form" autocomplete="off" action="/product/updateProductPost/${updatedProduct.id}"
            modelAttribute="updatedProduct" method="post" >
 
 
@@ -74,5 +73,3 @@
 <jsp:include page="partial/footer.jsp">
     <jsp:param name="title" value="Main title" />
 </jsp:include>
-</body>
-</html>

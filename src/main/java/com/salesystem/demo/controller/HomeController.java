@@ -27,11 +27,9 @@ public class HomeController {
     @RequestMapping("/")
     public String getAll(Model model, @Param("q") String q){
 
-
         List<Product> listProducts = productService.listAllProduct(q);
         model.addAttribute("products", listProducts);
         model.addAttribute("q", q);
-
 
         return "store";
     }

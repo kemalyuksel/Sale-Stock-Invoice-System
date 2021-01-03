@@ -42,11 +42,9 @@ public class ProductController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("productForm");
 
-
         modelAndView.addObject("product", new Product());
 
         return modelAndView;
-
     }
 
     @PostMapping("/createProductPost")
@@ -74,7 +72,6 @@ public class ProductController {
         model.addAttribute("updatedProduct", updatedProduct);
 
         return "productUpdateForm";
-
     }
 
     @PostMapping("/updateProductPost/{id}")
