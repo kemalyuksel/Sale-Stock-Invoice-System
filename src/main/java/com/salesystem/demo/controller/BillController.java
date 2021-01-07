@@ -15,7 +15,7 @@ public class BillController {
     private BillService billService;
 
     @RequestMapping("/bills")
-    public ModelAndView users(){
+    public ModelAndView getAllbills(){
 
         ModelAndView mv = new ModelAndView();
         mv.setViewName("billList");

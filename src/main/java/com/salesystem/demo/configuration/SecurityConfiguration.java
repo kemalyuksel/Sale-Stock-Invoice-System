@@ -1,4 +1,4 @@
-package com.salesystem.demo;
+package com.salesystem.demo.configuration;
 
 import com.salesystem.demo.service.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;

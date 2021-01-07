@@ -65,7 +65,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/orderList/">
+                <a class="nav-link" href="/user/orderList/">
                     <span data-feather="shopping-bag"></span>
                     Orders
                 </a>

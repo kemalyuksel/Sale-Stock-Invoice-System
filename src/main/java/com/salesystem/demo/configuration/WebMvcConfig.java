@@ -1,4 +1,4 @@
-package com.salesystem.demo;
+package com.salesystem.demo.configuration;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

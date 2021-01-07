@@ -1,6 +1,6 @@
 package com.salesystem.demo.service;
 
-import com.salesystem.demo.MyUserPrincipal;
+import com.salesystem.demo.configuration.MyUserPrincipal;
 import com.salesystem.demo.model.User;
 import com.salesystem.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

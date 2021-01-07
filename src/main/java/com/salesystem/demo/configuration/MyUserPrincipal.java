@@ -1,4 +1,4 @@
-package com.salesystem.demo;
+package com.salesystem.demo.configuration;
 
 import com.salesystem.demo.model.Role;
 import com.salesystem.demo.model.User;

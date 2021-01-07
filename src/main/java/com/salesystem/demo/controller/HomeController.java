@@ -35,19 +35,7 @@ public class HomeController {
     }
 
 
-    @RequestMapping("/orderList")
-    public ModelAndView getAllBills(Principal principal){
 
-        ModelAndView mv = new ModelAndView();
-        User user = userService.getByUsername(principal.getName());
-
-        List<Bill> orders = user.getBills();
-
-        mv.setViewName("myorders");
-        mv.addObject("orders",orders);
-
-        return mv;
-    }
 
 
 

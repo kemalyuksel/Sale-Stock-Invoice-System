@@ -39,7 +39,6 @@ public class BillService {
 
         bill.setUser(sellDto.getUser());
         bill.setProducts(sellDto.getProducts());
-        // set bill user and products.
 
         float totalPrice = 0;
 
@@ -47,13 +46,10 @@ public class BillService {
             totalPrice +=product.getPrice();
             productService.delete(product.getId());
         }
-        //  delete all items in the basket
-
         bill.setTotalPrice(totalPrice);
 
         String random =  Long.toHexString(Double.doubleToLongBits(Math.random()));
         bill.setBillNo(random);
-
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy hh:mm");
         Date date = new Date();

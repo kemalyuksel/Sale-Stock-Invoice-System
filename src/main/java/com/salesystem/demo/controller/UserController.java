@@ -33,7 +33,7 @@ public class UserController {
     private BillService billService;
 
     @RequestMapping("/customers")
-    public ModelAndView users(){
+    public ModelAndView customers(){
 
         ModelAndView mv = new ModelAndView();
         mv.setViewName("customerList");
@@ -42,6 +42,19 @@ public class UserController {
         return mv;
     }
 
+    @RequestMapping("/orderList")
+    public ModelAndView getAllBills(Principal principal){
+
+        ModelAndView mv = new ModelAndView();
+        User user = userService.getByUsername(principal.getName());
+
+        List<Bill> orders = user.getBills();
+
+        mv.setViewName("myorders");
+        mv.addObject("orders",orders);
+
+        return mv;
+    }
 
     @RequestMapping("/customerBills/{id}")
     public ModelAndView customerOrders(@PathVariable Long id){

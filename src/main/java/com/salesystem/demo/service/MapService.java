@@ -3,8 +3,10 @@ package com.salesystem.demo.service;
 import com.salesystem.demo.dto.statsDto;
 import com.salesystem.demo.model.Bill;
 import com.salesystem.demo.model.Product;
+import com.salesystem.demo.model.Role;
 import com.salesystem.demo.repository.BillRepository;
 import com.salesystem.demo.repository.ProductRepository;
+import com.salesystem.demo.repository.RoleRepository;
 import com.salesystem.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -27,6 +29,9 @@ public class MapService {
     @Autowired
     private BillRepository billRepository;
 
+    @Autowired
+    private RoleRepository roleRepository;
+
     public long getProductCount(){
 
         return productRepository.count();
@@ -38,8 +43,8 @@ public class MapService {
     }
 
     public long getCustomerCount(){
-
-        return userRepository.findAll().stream().count();
+        Role role =  roleRepository.findByName("USER");
+        return userRepository.findAll().stream().filter(user -> user.getRole().equals(role) ).count();
     }
 
     public float getTotalPrice(){
