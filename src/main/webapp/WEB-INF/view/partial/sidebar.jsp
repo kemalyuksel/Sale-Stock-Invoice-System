@@ -4,8 +4,14 @@
 
 
 
+<sec:authentication property="principal.authorities" var="authorities" />
+<c:forEach items="${authorities}" var="authority" varStatus="vs">
+    <c:set var="role" value="${authority.authority}"/>
+</c:forEach>
 
-<c:if test="${pageContext.request.userPrincipal.name eq 'admin'}">
+
+
+<c:if test="${role eq 'ADMIN'}">
     <nav class="col-md-2 d-none d-md-block bg-light sidebar">
         <div class="sidebar-sticky">
             <ul class="nav flex-column">
@@ -51,7 +57,7 @@
 
 </c:if>
 
-<c:if test="${pageContext.request.userPrincipal.name != 'admin'}">
+<c:if test="${role eq 'USER'}">
 <nav class="col-md-2 d-none d-md-block bg-light sidebar">
     <div class="sidebar-sticky">
         <ul class="nav flex-column">
