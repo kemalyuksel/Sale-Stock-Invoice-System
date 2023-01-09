@@ -14,5 +14,5 @@ Update Product         | Invoice
 ![Image](https://raw.githubusercontent.com/kemalyuksel/Sale-Stock-Invoice-System/master/SampleImgs/invoices.png) | ![ImageAdminStats](https://raw.githubusercontent.com/kemalyuksel/Sale-Stock-Invoice-System/master/SampleImgs/updateProduct.png)
 
 
-
+ 
 
